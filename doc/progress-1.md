@@ -18,10 +18,11 @@
       * 여기서, 위의 분포에 따라 random sampling 방식으로 문서를 뽑으면,
       * 유용성이 낮은 문서가 많이 뽑히기야 하겠지만, 구글 scoring 알고리즘이 놓친, 유용성이 높은 문서도 뽑힐 것이라 생각할 수 있다.
   * 위의 random sampling 기법의 정확한 명칭이, 'monte carlo' random sampling 기법임을 알았다. 
-    * 그러나, 이 기법의 경우 모분포를 알아내기까지 비용이 너무 많이 든다. 같은 확률로 모든 경우에 대해 추출하기 때문이다.
+    * 그러나, 같은 확률로 모든 경우에 대해 추출하기 때문에, 유용성이 낮은 문서가 많이 뽑힐 것이다.
   * 따라서, mcmc random sampling 기법을 사용하기로 판단했다.
     * mcmc random sampling 은, random sampling 이기는 하지만, 모분포를 파악하는 데 있어 효율적이라는 장점이 있다.
     * 자세한 사항은 링크로 갈음한다. (https://angeloyeo.github.io/2020/09/17/MCMC.html)
+    * 이 원리를 이용하면, 유용성이 높은 문서를 뽑을 가능성을 높힐 수 있다. 
 * 사전을 추가하는 기법에 앞서, 우선은 apache lucene 의 동작 원리에 대해서 조사했다.
   * 자세히는, apache lucene 내 morphological analyzer 에 사전을 추가하는 것이기 때문에, apache lucene 에 대해서도 알아보아야 한다.
 
