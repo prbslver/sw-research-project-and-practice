@@ -55,7 +55,10 @@
 * 기술
   * 대용량 데이터를 open api 를 거쳐 수집한다.
     * google 은 search query api quota, index api quota 에도 제한을 두고 있다.
+      * 따라서, google 이 개선대상임에도 불구하고, google 을 활용해서 개선할 수는 없다.
     * twitter 는 google 보다 널널한 quota 를 제공하는 듯 하니 이를 사용할 예정이다.
+      * 이걸 대신 활용해 개선된 모습을 보여주어야 한다.
+      * 구체적인 방법은 나중에...
   * 수집한 데이터를 dbms 에 저장한다.
     * flask/django 의 데이터베이스 ORM 활용한다.
     * apache lucene 에 저장한다.
