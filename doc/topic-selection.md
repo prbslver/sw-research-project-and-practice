@@ -24,8 +24,11 @@
     * inverted indexing 시 morphological analyzer 가 '한국외국어대학교' 이라는 search query 를 하나의 고유명사로 인식하지 못하고, '한국' + '외국어' + '대학교' 라고 인식하여, key '한국' 에 대응하는 value 문서, key '외국어' 에 대응하는 value 문서, key '대학교' 에 대응하는 value 문서를 검색결과로 제공할 수 있다.
   * 마찬가지로, inverted indexing 시 morphological analyzer 가 일반적이지 않은 document 내용 (예를 들자면, 고유명사 등을 포함한 document 의 내용) 에 대응하지 못하면, 의도하지 않은 key 로 index 가 작성될 수 있다.
 * 위를 개선하기 위해서 다음의 방식을 제안한다. 
-  * 단순무식한 방법이지만, 적당한 sample size 를 정하여 random sampling 방법으로 문서를 추출한다.
+  * 단순무식한 방법이지만, random sampling 방법으로 문서를 추출해서, 구글이 놓치는 문서도 검색되도록 한다.
   * 고유명사, 유행어 등을 수록한 사전을 도입하여 morphological analyzer 에 추가한다.
+  * bfs 를 이용한 방식은 왜 안하냐면,
+    * 구글의 난점을 극복하려는 목적은 bfs, random sampling 둘 다 같은데,
+    * random sampling 방식이 더 elegance 한 것 같아서, 이 방식으로 순회하였기 때문이다.
 
 
 연구 수행단계
